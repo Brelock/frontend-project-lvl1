@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Brelock/frontend-project-lvl1/issues"
   },
+  "bin": {
+    "brain-games": "./bin/brain-games.js"
+  },
+  "type": "module",
   "homepage": "https://github.com/Brelock/frontend-project-lvl1#readme"
 }
