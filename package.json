@@ -16,7 +16,8 @@
     "url": "https://github.com/Brelock/frontend-project-lvl1/issues"
   },
   "bin": {
-    "brain-games": "./bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "type": "module",
   "homepage": "https://github.com/Brelock/frontend-project-lvl1#readme",
