@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "@hexlet/code.",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/Brelock/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Brelock/frontend-project-lvl1/actions)",
@@ -19,12 +20,15 @@
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js"
   },
-  "type": "module",
   "homepage": "https://github.com/Brelock/frontend-project-lvl1#readme",
   "dependencies": {
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "eslint": "^7.17.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-rallycoding": "^3.2.0",
