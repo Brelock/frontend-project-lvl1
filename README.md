@@ -5,3 +5,7 @@
 Brain Even Game:
 
 [![asciicast](https://asciinema.org/a/tOp4x2EzGziaplOErWqVuVLKc.svg)](https://asciinema.org/a/tOp4x2EzGziaplOErWqVuVLKc)
+
+Brain Calc Game:
+
+[![asciicast](https://asciinema.org/a/xglbgUNpK5ZMD9SM05HFauE3d.svg)](https://asciinema.org/a/xglbgUNpK5ZMD9SM05HFauE3d)

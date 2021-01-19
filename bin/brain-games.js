@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import nameSet from '../src/cli.js';
+import welcomeToGame from '../src/helloToGame.js';
 
-nameSet();
+welcomeToGame();
