@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import welcomeToGame from '../helloToGame.js';
 
@@ -36,5 +35,3 @@ export default function brainCalc() {
   }
   console.log(`${'Congratulations,'}, ${name}!`);
 }
-
-// export default brainCalc;
