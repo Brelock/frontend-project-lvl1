@@ -15,7 +15,7 @@ export default function gameEven() {
     console.log('Question:', question);
     const answer = readlineSync.question('Your answer: ');
     if (answer !== correctAnswer) {
-      console.log("Let's try again,", name, '!');
+      console.log(`${'Let\'s try again,'}, ${name}!`);
       return;
     }
     console.log('Correct!');
