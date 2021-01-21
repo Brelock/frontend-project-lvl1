@@ -22,7 +22,7 @@ export default function gameGcd() {
     const num1 = Math.floor(Math.random() * (max - min + 1)) + min;
     const num2 = Math.floor(Math.random() * (max - min + 1)) + min;
 
-    const question = `${num1} ${''} ${num2}`;
+    const question = `${num1} ${num2}`;
     console.log('Question:', question);
     const ansStr = readlineSync.question('Your answer: ');
     const e = egcd(num1, num2);
