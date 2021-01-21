@@ -27,7 +27,7 @@ export default function brainCalc() {
     console.log('Question:', question);
     const answer = readlineSync.question('Your answer: ');
     if (answer !== correctAnswer) {
-      console.log(`'${answer}' ${"is wrong answer ';'(. Correct answer was,"} '${correctAnswer}'.`);
+      console.log(`'${answer}' ${"is wrong answer ;(. Correct answer was,"} '${correctAnswer}'.`);
       console.log(`${'Let\'s try again,'} ${name}!`);
       return;
     }
