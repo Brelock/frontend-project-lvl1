@@ -7,8 +7,8 @@ export default function gamePrime() {
 
   const isEvenNumber = (num) => {
     let i = 2;
-    if (num <= 2) {
-      return true;
+    if (num < 2) {
+      return false;
     }
     while (i <= num / 2) {
       if (num % i === 0) {
@@ -28,7 +28,7 @@ export default function gamePrime() {
     console.log('Question:', question);
     const answer = readlineSync.question('Your answer: ');
     if (answer !== correctAnswer) {
-      console.log(`'${answer}' ${"is wrong answer ;(. Correct answer was,"} '${correctAnswer}'.`);
+      console.log(`'${answer}' ${"is wrong answer ';'(. Correct answer was,"} '${correctAnswer}'.`);
       console.log(`${'Let\'s try again,'} ${name}!`);
       return;
     }

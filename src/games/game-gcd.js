@@ -28,7 +28,7 @@ export default function gameGcd() {
     const e = egcd(num1, num2);
     const answer = Number(ansStr);
     if (answer !== e) {
-      console.log(`'${answer}' ${"is wrong answer ;(. Correct answer was,"} '${e}'.`);
+      console.log(`'${answer}' ${"is wrong answer ';'(. Correct answer was,"} '${e}'.`);
       console.log(`${'Let\'s try again,'} ${name}!`);
       return;
     }
