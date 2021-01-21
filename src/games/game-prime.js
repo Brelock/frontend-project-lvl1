@@ -6,9 +6,12 @@ export default function gamePrime() {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   const isEvenNumber = (num) => {
-    let i = 0;
-    while (i < num) {
-      if (num % 2 === 0) {
+    let i = 2;
+    if (num <= 2) {
+      return true;
+    }
+    while (i <= num / 2) {
+      if (num % i === 0) {
         return false;
       }
       i += 1;
