@@ -22,17 +22,17 @@ export default function gameGcd() {
     const num1 = Math.floor(Math.random() * (max - min + 1)) + min;
     const num2 = Math.floor(Math.random() * (max - min + 1)) + min;
 
-    const question = `${num1} ${' '} ${num2}`;
+    const question = `${num1} ${''} ${num2}`;
     console.log('Question:', question);
     const ansStr = readlineSync.question('Your answer: ');
     const e = egcd(num1, num2);
     const answer = Number(ansStr);
     if (answer !== e) {
       console.log(`'${answer}' ${"is wrong answer ';'(. Correct answer was,"} '${e}'.`);
-      console.log(`${'Let\'s try again,'}, ${name}!`);
+      console.log(`${'Let\'s try again,'} ${name}!`);
       return;
     }
     console.log('Correct!');
   }
-  console.log(`${'Congratulations,'}, ${name}!`);
+  console.log(`${'Congratulations,'} ${name}!`);
 }

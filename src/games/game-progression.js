@@ -35,10 +35,10 @@ export default function gameProgression() {
     const answer = Number(anStr);
     if (answer !== numRundomElement) {
       console.log(`'${answer}' ${"is wrong answer ';'(. Correct answer was,"} '${numRundomElement}'.`);
-      console.log(`${'Let\'s try again,'}, ${name}!`);
+      console.log(`${'Let\'s try again,'} ${name}!`);
       return;
     }
     console.log('Correct!');
   }
-  console.log(`${'Congratulations,'}, ${name}!`);
+  console.log(`${'Congratulations,'} ${name}!`);
 }
