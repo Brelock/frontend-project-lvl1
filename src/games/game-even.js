@@ -20,6 +20,5 @@ export default function gameEven() {
     }
     console.log('Correct!');
   }
-
   console.log(`${'Congratulations,'} ${name}!`);
 }
