@@ -1,5 +1,5 @@
 # Name of workflow
-name: Brain-Games CI
+name: Linter
 
 # Trigger the workflow on push or pull request
 on:
