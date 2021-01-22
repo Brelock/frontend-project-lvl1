@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
-import welcomeToGame from '../helloToGame.js';
+import welcomeToGame from '../cli.js';
 
-function egcd(a, b) {
+function searchNumber(a, b) {
   let c = a;
   let d = b;
   if (c === 0) return d;
@@ -12,7 +12,7 @@ function egcd(a, b) {
   return c;
 }
 
-export default function gameGcd() {
+export default function launchGameGcd() {
   const name = welcomeToGame();
   console.log('Find the greatest common divisor of given numbers.');
   const numAnswer = 3;
@@ -25,7 +25,7 @@ export default function gameGcd() {
     const question = `${num1} ${num2}`;
     console.log('Question:', question);
     const ansStr = readlineSync.question('Your answer: ');
-    const e = egcd(num1, num2);
+    const e = searchNumber(num1, num2);
     const answer = Number(ansStr);
     if (answer !== e) {
       console.log(`'${answer}' ${"is wrong answer ';'(. Correct answer was,"} '${e}'.`);

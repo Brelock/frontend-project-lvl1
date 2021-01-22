@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
-import welcomeToGame from '../helloToGame.js';
+import welcomeToGame from '../cli.js';
 
-export default function brainCalc() {
+export default function launchGameCalc() {
   const name = welcomeToGame();
   console.log('What is the result of the expression?');
 

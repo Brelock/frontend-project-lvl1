@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
-import welcomeToGame from '../helloToGame.js';
+import welcomeToGame from '../cli.js';
 
-export default function gameProgression() {
+export default function launchGameProgression() {
   const name = welcomeToGame();
   console.log('What number is missing in the progression?');
   const numAnswer = 3;

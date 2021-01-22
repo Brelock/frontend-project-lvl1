@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
-import welcomeToGame from '../helloToGame.js';
+import welcomeToGame from '../cli.js';
 
-export default function gamePrime() {
+export default function launchGamePrime() {
   const name = welcomeToGame();
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 

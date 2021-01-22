@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
-import welcomeToGame from '../helloToGame.js';
+import welcomeToGame from '../cli.js';
 
-export default function gameEven() {
+export default function launchGameEven() {
   const name = welcomeToGame();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
