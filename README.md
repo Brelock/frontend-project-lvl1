@@ -2,6 +2,16 @@
 ## Description:
 This repository presents work with javaScript for working with numbers
 
+<br>
+
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/Brelock/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Brelock/frontend-project-lvl1/actions)
+![Linter](https://github.com/Brelock/frontend-project-lvl1/workflows/Linter/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+
+<br>
+<br>
+
 ## Setup:
 
 ```sh
@@ -9,15 +19,8 @@ $ make install
 $ make publish
 $ npm link
 ```
-
-
-[![Actions Status](https://github.com/Brelock/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Brelock/frontend-project-lvl1/actions)
-[![testing by eslint](https://github.com/Brelock/frontend-project-lvl1/workflows/myTest/badge.svg)]
-![myTest](https://github.com/Brelock/frontend-project-lvl1/workflows/myTest/badge.svg)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
-
-
-
+<br>
+<br>
 
 ## Brain Even Game:
 ### Игра: "Проверка на чётность"
