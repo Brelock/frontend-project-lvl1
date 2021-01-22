@@ -1,24 +1,13 @@
-import readlineSync from 'readline-sync';
-import welcomeToGame from '../cli.js';
+import startEngine from '../index.js';
+import rundomValue from '../utilsRundom.js';
 
-export default function launchGameEven() {
-  const name = welcomeToGame();
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const descriptionGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+const isEvenNumber = (num) => (num % 2 === 0);
 
-  const isEvenNumber = (num) => (num % 2 === 0);
-  const [min, max] = [1, 5];
+const generateQuestionAndAnswer = () => {
+  const question = rundomValue(1, 10);
+  const correctAnswer = isEvenNumber(question) ? 'yes' : 'no';
+  return [question, correctAnswer];
+};
 
-  const numAnswer = 3;
-  for (let i = 0; i < numAnswer; i += 1) {
-    const question = Math.floor(Math.random() * (max - min + 1)) + min;
-    const correctAnswer = isEvenNumber(question) ? 'yes' : 'no';
-    console.log('Question:', question);
-    const answer = readlineSync.question('Your answer: ');
-    if (answer !== correctAnswer) {
-      console.log(`${'Let\'s try again,'} ${name}!`);
-      return;
-    }
-    console.log('Correct!');
-  }
-  console.log(`${'Congratulations,'} ${name}!`);
-}
+export default () => startEngine(descriptionGame, generateQuestionAndAnswer);

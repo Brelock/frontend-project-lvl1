@@ -1,5 +1,7 @@
-import readlineSync from 'readline-sync';
-import welcomeToGame from '../cli.js';
+import startEngine from '../index.js';
+import rundomValue from '../utilsRundom.js';
+
+const descriptionGame = 'Find the greatest common divisor of given numbers.';
 
 function searchNumber(a, b) {
   let c = a;
@@ -12,27 +14,12 @@ function searchNumber(a, b) {
   return c;
 }
 
-export default function launchGameGcd() {
-  const name = welcomeToGame();
-  console.log('Find the greatest common divisor of given numbers.');
-  const numAnswer = 3;
-  const [min, max] = [15, 5];
+const generateQuestionAndAnswer = () => {
+  const firstNumber = rundomValue(1, 110);
+  const secondNumber = rundomValue(1, 60);
+  const gameQuestion = `${firstNumber} ${secondNumber}`;
+  const correctAnswer = searchNumber(firstNumber, secondNumber);
+  return [gameQuestion, correctAnswer.toString()];
+};
 
-  for (let i = 0; i < numAnswer; i += 1) {
-    const num1 = Math.floor(Math.random() * (max - min + 1)) + min;
-    const num2 = Math.floor(Math.random() * (max - min + 1)) + min;
-
-    const question = `${num1} ${num2}`;
-    console.log('Question:', question);
-    const ansStr = readlineSync.question('Your answer: ');
-    const e = searchNumber(num1, num2);
-    const answer = Number(ansStr);
-    if (answer !== e) {
-      console.log(`'${answer}' ${"is wrong answer ';'(. Correct answer was,"} '${e}'.`);
-      console.log(`${'Let\'s try again,'} ${name}!`);
-      return;
-    }
-    console.log('Correct!');
-  }
-  console.log(`${'Congratulations,'} ${name}!`);
-}
+export default () => startEngine(descriptionGame, generateQuestionAndAnswer);

@@ -1,37 +1,31 @@
-import readlineSync from 'readline-sync';
-import welcomeToGame from '../cli.js';
+import startEngine from '../index.js';
+import rundomValue from '../utilsRundom.js';
 
-export default function launchGameCalc() {
-  const name = welcomeToGame();
-  console.log('What is the result of the expression?');
+const descriptionGame = 'What is the result of the expression?';
 
-  const numAnswer = 3;
+const getDataGame = (expression, answer) => [expression, answer.toString()];
 
-  const [min, max] = [1, 5];
-  const operant = ['+', '-', '*'];
-
-  for (let i = 0; i < numAnswer; i += 1) {
-    const num1 = Math.floor(Math.random() * (max - min + 1)) + min;
-    const num2 = Math.floor(Math.random() * (max - min + 1)) + min;
-    const operation = operant[Math.floor(Math.random() * operant.length)];
-
-    const operationValue = {
-      '+': num1 + num2,
-      '-': num1 - num2,
-      '*': num1 * num2,
-    };
-
-    const question = `${num1} ${operation} ${num2}`;
-    const correctAnswer = String(operationValue[operation]);
-
-    console.log('Question:', question);
-    const answer = readlineSync.question('Your answer: ');
-    if (answer !== correctAnswer) {
-      console.log(`'${answer}' ${"is wrong answer ';'(. Correct answer was,"} '${correctAnswer}'.`);
-      console.log(`${'Let\'s try again,'} ${name}!`);
-      return;
-    }
-    console.log('Correct!');
+const getCorrectAnswer = (operation, firstOperand, secondOperand) => {
+  switch (operation) {
+    case '+':
+      return firstOperand + secondOperand;
+    case '-':
+      return firstOperand - secondOperand;
+    case '*':
+      return firstOperand * secondOperand;
+    default:
+      return null;
   }
-  console.log(`${'Congratulations,'} ${name}!`);
-}
+};
+
+const generateQuestionAndAnswer = () => {
+  const operations = ['+', '-', '*'];
+  const randomOperation = operations[rundomValue(0, operations.length) - 1];
+  const firstOperand = rundomValue(1, 10);
+  const secondOperand = rundomValue(1, 10);
+  const gameQuestion = `${firstOperand} ${randomOperation} ${secondOperand}`;
+  const correctAnswer = getCorrectAnswer(randomOperation, firstOperand, secondOperand);
+  return getDataGame(gameQuestion, correctAnswer);
+};
+
+export default () => startEngine(descriptionGame, generateQuestionAndAnswer);
