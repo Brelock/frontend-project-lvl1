@@ -1,11 +1,9 @@
 import startEngine from '../index.js';
-import rundomValue from '../utilsRundom.js';
+import randomValue from '../utilsRandom.js';
 
-const descriptionGame = 'What is the result of the expression?';
+const gameDescription = 'What is the result of the expression?';
 
-const getDataGame = (expression, answer) => [expression, answer.toString()];
-
-const getCorrectAnswer = (operation, firstOperand, secondOperand) => {
+const getAnswer = (operation, firstOperand, secondOperand) => {
   switch (operation) {
     case '+':
       return firstOperand + secondOperand;
@@ -20,12 +18,13 @@ const getCorrectAnswer = (operation, firstOperand, secondOperand) => {
 
 const generateQuestionAndAnswer = () => {
   const operations = ['+', '-', '*'];
-  const randomOperation = operations[rundomValue(0, operations.length) - 1];
-  const firstOperand = rundomValue(1, 10);
-  const secondOperand = rundomValue(1, 10);
+  const randomOperation = operations[randomValue(0, operations.length)];
+  console.log(randomOperation);
+  const firstOperand = randomValue(1, 10);
+  const secondOperand = randomValue(1, 10);
   const gameQuestion = `${firstOperand} ${randomOperation} ${secondOperand}`;
-  const correctAnswer = getCorrectAnswer(randomOperation, firstOperand, secondOperand);
-  return getDataGame(gameQuestion, correctAnswer);
+  const correctAnswer = getAnswer(randomOperation, firstOperand, secondOperand);
+  return ([gameQuestion, correctAnswer.toString()]);
 };
 
-export default () => startEngine(descriptionGame, generateQuestionAndAnswer);
+export default () => startEngine(gameDescription, generateQuestionAndAnswer);

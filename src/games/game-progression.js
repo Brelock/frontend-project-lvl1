@@ -1,20 +1,25 @@
 import startEngine from '../index.js';
-import rundomValue from '../utilsRundom.js';
+import randomValue from '../utilsRandom.js';
 
-const descriptionGame = 'What number is missing in the progression?';
+const gameDescription = 'What number is missing in the progression?';
 
-const generateQuestionAndAnswer = () => {
+function generatingProgression() {
   const gameQuestion = [];
-  const lengthProgression = rundomValue(5, 10);
-  const randomStep = rundomValue(2, 5);
-  const start = rundomValue(1, 50);
+  const lengthProgression = randomValue(5, 10);
+  const randomStep = randomValue(2, 5);
+  const start = randomValue(1, 50);
   for (let i = start; gameQuestion.length < lengthProgression; i += randomStep) {
     gameQuestion.push(i);
   }
-  const randomIndex = rundomValue(0, gameQuestion.length - 1);
+  return gameQuestion;
+}
+
+const generateQuestionAndAnswer = () => {
+  const gameQuestion = generatingProgression();
+  const randomIndex = randomValue(0, gameQuestion.length - 1);
   const correctAnswer = gameQuestion[randomIndex];
   gameQuestion[randomIndex] = '..';
   return [gameQuestion.join(' '), correctAnswer.toString()];
 };
 
-export default () => startEngine(descriptionGame, generateQuestionAndAnswer);
+export default () => startEngine(gameDescription, generateQuestionAndAnswer);

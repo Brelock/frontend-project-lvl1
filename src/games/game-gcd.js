@@ -1,25 +1,25 @@
 import startEngine from '../index.js';
-import rundomValue from '../utilsRundom.js';
+import randomValue from '../utilsRandom.js';
 
-const descriptionGame = 'Find the greatest common divisor of given numbers.';
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 
-function searchNumber(a, b) {
-  let c = a;
-  let d = b;
-  if (c === 0) return d;
-  while (d !== 0) {
-    if (c > d) c -= d;
-    else d -= c;
+function findGreatestDivisor(firstNumber, secondNumber) {
+  let tempNum1 = firstNumber;
+  let tempNum2 = secondNumber;
+  if (tempNum1 === 0) return tempNum2;
+  while (tempNum2 !== 0) {
+    if (tempNum1 > tempNum2) tempNum1 -= tempNum2;
+    else tempNum2 -= tempNum1;
   }
-  return c;
+  return tempNum1;
 }
 
 const generateQuestionAndAnswer = () => {
-  const firstNumber = rundomValue(1, 110);
-  const secondNumber = rundomValue(1, 60);
+  const firstNumber = randomValue(1, 110);
+  const secondNumber = randomValue(1, 60);
   const gameQuestion = `${firstNumber} ${secondNumber}`;
-  const correctAnswer = searchNumber(firstNumber, secondNumber);
+  const correctAnswer = findGreatestDivisor(firstNumber, secondNumber);
   return [gameQuestion, correctAnswer.toString()];
 };
 
-export default () => startEngine(descriptionGame, generateQuestionAndAnswer);
+export default () => startEngine(gameDescription, generateQuestionAndAnswer);
