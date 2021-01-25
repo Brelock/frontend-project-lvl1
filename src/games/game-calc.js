@@ -19,12 +19,13 @@ const getAnswer = (operation, firstOperand, secondOperand) => {
 const generateQuestionAndAnswer = () => {
   const operations = ['+', '-', '*'];
   const randomOperation = operations[randomValue(0, operations.length)];
-  console.log(randomOperation);
   const firstOperand = randomValue(1, 10);
   const secondOperand = randomValue(1, 10);
   const gameQuestion = `${firstOperand} ${randomOperation} ${secondOperand}`;
-  const correctAnswer = getAnswer(randomOperation, firstOperand, secondOperand);
-  return ([gameQuestion, correctAnswer.toString()]);
+  const correctAnswerNum = getAnswer(randomOperation, firstOperand, secondOperand);
+  const correctAnswer = correctAnswerNum.toString();
+
+  return ([gameQuestion, correctAnswer]);
 };
 
 export default () => startEngine(gameDescription, generateQuestionAndAnswer);
