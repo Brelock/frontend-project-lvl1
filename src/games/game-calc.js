@@ -1,7 +1,5 @@
 import startEngine from '../index.js';
-import randomValue from '../utilsRandom.js';
-
-const gameDescription = 'What is the result of the expression?';
+import generateRandomNum from '../utilsRandom.js';
 
 const getAnswer = (operation, firstOperand, secondOperand) => {
   switch (operation) {
@@ -18,13 +16,12 @@ const getAnswer = (operation, firstOperand, secondOperand) => {
 
 const generateQuestionAndAnswer = () => {
   const operations = ['+', '-', '*'];
-  const randomOperation = operations[randomValue(0, 2)];
-  const firstOperand = randomValue(1, 10);
-  const secondOperand = randomValue(1, 10);
+  const randomOperation = operations[generateRandomNum(0, 2)];
+  const firstOperand = generateRandomNum(1, 10);
+  const secondOperand = generateRandomNum(1, 10);
   const gameQuestion = `${firstOperand} ${randomOperation} ${secondOperand}`;
-  const correctAnswerNum = getAnswer(randomOperation, firstOperand, secondOperand);
-  const correctAnswer = correctAnswerNum.toString();
-  return ([gameQuestion, correctAnswer]);
+  const answer = getAnswer(randomOperation, firstOperand, secondOperand).toString();
+  return [gameQuestion, answer];
 };
 
-export default () => startEngine(gameDescription, generateQuestionAndAnswer);
+export default () => startEngine('What is the result of the expression?', generateQuestionAndAnswer);

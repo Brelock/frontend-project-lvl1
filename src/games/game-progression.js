@@ -1,25 +1,20 @@
 import startEngine from '../index.js';
-import randomValue from '../utilsRandom.js';
+import generateRandomNum from '../utilsRandom.js';
 
-const gameDescription = 'What number is missing in the progression?';
-
-function generatingProgression() {
-  const gameQuestion = [];
-  const lengthProgression = randomValue(5, 10);
-  const randomStep = randomValue(2, 5);
-  const start = randomValue(1, 50);
-  for (let i = start; gameQuestion.length < lengthProgression; i += randomStep) {
-    gameQuestion.push(i);
-  }
-  return gameQuestion;
-}
+const generatingProgression = (start, step, length) => (new Array(length))
+  .fill(start)
+  .map((element, currentIndex) => (element + step * currentIndex));
 
 const generateQuestionAndAnswer = () => {
-  const gameQuestion = generatingProgression();
-  const randomIndex = randomValue(0, gameQuestion.length - 1);
+  const progressionLength = generateRandomNum(5, 10);
+  const step = generateRandomNum(2, 5);
+  const start = generateRandomNum(1, 50);
+
+  const gameQuestion = generatingProgression(start, step, progressionLength);
+  const randomIndex = generateRandomNum(0, gameQuestion.length - 1);
   const correctAnswer = gameQuestion[randomIndex];
   gameQuestion[randomIndex] = '..';
   return [gameQuestion.join(' '), correctAnswer.toString()];
 };
 
-export default () => startEngine(gameDescription, generateQuestionAndAnswer);
+export default () => startEngine('What number is missing in the progression?', generateQuestionAndAnswer);
