@@ -8,14 +8,18 @@ const generatingProgression = (start, step, length) => (new Array(length))
   .map((element, currentIndex) => (element + step * currentIndex));
 
 const generateQuestionAndAnswer = () => {
-  const progressionLength = generateRandomNum(5, 10);
-  const step = generateRandomNum(2, 5);
-  const start = generateRandomNum(1, 50);
+  const progressionStart = generateRandomNum(1, 50);
+  const progressionLength = 10;
+  const hiddenElementIndex = generateRandomNum(0, progressionLength - 1);
+  const progressionStep = generateRandomNum(1, 5);
 
-  const question = generatingProgression(start, step, progressionLength);
-  const randomIndex = generateRandomNum(0, question.length - 1);
-  const answer = question[randomIndex].toString();
-  question[randomIndex] = '..';
+  const progression = generatingProgression(progressionStart, progressionStep, progressionLength);
+
+  const answer = progression[hiddenElementIndex].toString();
+
+  progression[hiddenElementIndex] = '..';
+  const question = progression.join(' ');
+
   return [question, answer];
 };
 
