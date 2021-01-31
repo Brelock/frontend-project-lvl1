@@ -1,6 +1,8 @@
 import startEngine from '../index.js';
 import generateRandomNum from '../utilsRandom.js';
 
+const description = 'What is the result of the expression?';
+
 const getAnswer = (operation, firstOperand, secondOperand) => {
   switch (operation) {
     case '+':
@@ -16,12 +18,12 @@ const getAnswer = (operation, firstOperand, secondOperand) => {
 
 const generateQuestionAndAnswer = () => {
   const operations = ['+', '-', '*'];
-  const randomOperation = operations[generateRandomNum(0, 2)];
+  const randomOperation = operations[generateRandomNum(0, operations.length - 1)];
   const firstOperand = generateRandomNum(1, 10);
   const secondOperand = generateRandomNum(1, 10);
-  const gameQuestion = `${firstOperand} ${randomOperation} ${secondOperand}`;
+  const question = `${firstOperand} ${randomOperation} ${secondOperand}`;
   const answer = getAnswer(randomOperation, firstOperand, secondOperand).toString();
-  return [gameQuestion, answer];
+  return [question, answer];
 };
 
-export default () => startEngine('What is the result of the expression?', generateQuestionAndAnswer);
+export default () => startEngine(description, generateQuestionAndAnswer);

@@ -8,13 +8,13 @@ export default (gameDescription, getQuestionAndCorrectAnswer) => {
   console.log(`Hello, ${userName}!`);
   console.log(gameDescription);
   for (let i = 0; i < roundsCount; i += 1) {
-    const [question, correctAnswer] = getQuestionAndCorrectAnswer();
+    const [question, answer] = getQuestionAndCorrectAnswer();
     console.log(`Question: ${question}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (correctAnswer === answer) {
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (answer === userAnswer) {
       console.log('Correct');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!'`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${userName}!'`);
       return;
     }
   }
