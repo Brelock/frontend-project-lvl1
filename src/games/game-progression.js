@@ -3,7 +3,7 @@ import generateRandomNum from '../utilsRandom.js';
 
 const description = 'What number is missing in the progression?';
 
-const generatingProgression = (start, step, length) => (new Array(length))
+const generateProgression = (start, step, length) => (new Array(length))
   .fill(start)
   .map((element, currentIndex) => (element + step * currentIndex));
 
@@ -13,7 +13,7 @@ const generateQuestionAndAnswer = () => {
   const hiddenElementIndex = generateRandomNum(0, progressionLength - 1);
   const progressionStep = generateRandomNum(1, 5);
 
-  const progression = generatingProgression(progressionStart, progressionStep, progressionLength);
+  const progression = generateProgression(progressionStart, progressionStep, progressionLength);
 
   const answer = progression[hiddenElementIndex].toString();
 
