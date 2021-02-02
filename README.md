@@ -25,32 +25,32 @@ $ npm link
 ```sh
 $ make brain-even
 ```
-[![asciicast](https://asciinema.org/a/tOp4x2EzGziaplOErWqVuVLKc.svg)](https://asciinema.org/a/tOp4x2EzGziaplOErWqVuVLKc)
+[![asciicast](https://asciinema.org/a/6T74n5S7ceGMbtbOIS5GXJXWd.svg)](https://asciinema.org/a/6T74n5S7ceGMbtbOIS5GXJXWd)
 
 ## Brain Calc Game:
 ### Игра: "Калькулятор"
 ```sh
 $ make brain-calc
 ```
-[![asciicast](https://asciinema.org/a/xglbgUNpK5ZMD9SM05HFauE3d.svg)](https://asciinema.org/a/xglbgUNpK5ZMD9SM05HFauE3d)
+[![asciicast](https://asciinema.org/a/iJnY7dOVqB8G2szupkgWrWwWk.svg)](https://asciinema.org/a/iJnY7dOVqB8G2szupkgWrWwWk)
 
 ## Brain Gcd Game:
 ### Игра "Наибольший общий делитель (НОД)"
 ```sh
 $ make brain-gcd
 ```
-[![asciicast](https://asciinema.org/a/T9uhjjcStqd3sdlEw3TNAZW8n.svg)](https://asciinema.org/a/T9uhjjcStqd3sdlEw3TNAZW8n)
+[![asciicast](https://asciinema.org/a/mVjwi34zqcRIuE4DqQNcJp6MS.svg)](https://asciinema.org/a/mVjwi34zqcRIuE4DqQNcJp6MS)
 
 ## Brain Progression Game:
 ### Игра "Арифметическая прогрессия"
 ```sh
-$ make brain-prog
+$ make brain-progression
 ```
-[![asciicast](https://asciinema.org/a/ljurE2asxPA7FOXfTmnhYfyIW.svg)](https://asciinema.org/a/ljurE2asxPA7FOXfTmnhYfyIW)
+[![asciicast](https://asciinema.org/a/bQu2HVqF1Qnzxw6aCnWgATJXJ.svg)](https://asciinema.org/a/bQu2HVqF1Qnzxw6aCnWgATJXJ)
 
 ## Brain Prime Game:
 ### Игра "Простое ли число?"
 ```sh
 $ make brain-prime
 ```
-[![asciicast](https://asciinema.org/a/NbXlA9ctf8rNTYYQx9FD4ZCdF.svg)](https://asciinema.org/a/NbXlA9ctf8rNTYYQx9FD4ZCdF)
+[![asciicast](https://asciinema.org/a/N0ZNQ9GW84qaBEER0qkhhUv1Y.svg)](https://asciinema.org/a/N0ZNQ9GW84qaBEER0qkhhUv1Y)
